@@ -11,5 +11,5 @@ doc - A new aspect of documentation
 ref - Refactor of the code, does not affect functionality  
 opt - Performance optimization, does not affect code functionality  
 fix - Fix of the known bug  
-mix - Miscellaneous/experimental feature  
+exp - Miscellaneous/experimental feature  
 
