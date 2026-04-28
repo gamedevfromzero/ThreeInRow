@@ -1,11 +1,11 @@
-### Development manual 
+# Development manual 
 
 ## Branch naming
-# Structure 
+### Structure 
 (prefix)/(short-name)/(year-month) without ( )
-# Allowed characters 
+### Allowed characters 
 Whole branch name consists of lowercase A-Z, 0-9, and "/" with space character replaced by "-"
-# Prefixes
+### Prefixes
 new - A new feature in code
 doc - A new aspect of documentation 
 ref - Refactor of the code, does not affect functionality
