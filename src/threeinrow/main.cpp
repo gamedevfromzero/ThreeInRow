@@ -1,23 +1,16 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
+#include "game/game_manager.hpp"
 
 
-int main()
+int main(int argc, char *argv[])
 {
-    sf::RenderWindow window(sf::VideoMode({200, 200}), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+	int windowWidth = 720;
+	int windowHeight = 720;
+	const char* windowName = "Three in row (by gamedevfromzero)";
+	
+	Session session = SessionManager::newSession();
+	session.setVector2("window_size", sf::Vector2f(windowWidth, windowHeight));
+	session.setString("window_name", windowName);
 
-    while (window.isOpen())
-    {
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+	GameManager gameManager(session, argc, argv);
+	gameManager.run();
 }
