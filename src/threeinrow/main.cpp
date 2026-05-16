@@ -1,16 +1,13 @@
-#include "game/game_manager.hpp"
+#include "config/config.hpp"
+#include "math/vector.hpp"
 
 
 int main(int argc, char *argv[])
 {
-	int windowWidth = 720;
-	int windowHeight = 720;
-	const char* windowName = "Three in row (by gamedevfromzero)";
-	
-	Session session = SessionManager::newSession();
-	session.setVector2("window_size", sf::Vector2f(windowWidth, windowHeight));
-	session.setString("window_name", windowName);
+	Config windowConfig;
+	windowConfig.registerType<Vec2u>();
+	windowConfig.registerType<std::string>();
 
-	GameManager gameManager(session, argc, argv);
-	gameManager.run();
+	windowConfig.set<Vec2u>("window_size", Vec2u(720, 720));
+	windowConfig.set<std::string>("window_name", "Three in row | gamedevfromzero");
 }
